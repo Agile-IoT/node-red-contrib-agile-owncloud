@@ -1,0 +1,78 @@
+<!--
+/*******************************************************************************
+* Copyright (C) 2017 Orange.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+*
+* Contributors:
+*     Rombit - initial implementation
+*
+******************************************************************************/
+-->
+
+<script type="text/javascript" data-lang="en-US">
+
+    RED.nodes.registerType('agile-ownCloud-upload',{
+        category: 'ownCloud',
+        color: '#e2d96e',
+        defaults: {
+            name: {value:""},
+            clientId: {type: "password"},
+            clientSecret: {type: "password"},
+            owncloudServer: {value:""},
+            remotepath: {value:""}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "white-globe.png",
+        label: function() {
+            return this.name||"agile OwnCloud upload";
+        }
+
+    });
+
+</script>
+
+<script type="text/x-red" data-template-name="agile-ownCloud-upload" data-lang="en-US">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="ownCloudFileUpload.label.name"></span></label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-owncloudServer"><i class="fa fa-server"></i> <span data-i18n="ownCloudFileUpload.label.owncloudServer"></span></label>
+        <input type="text" id="node-input-owncloudServer">
+    </div>
+    <div class="form-row">
+        <label for="node-input-remotepath"><i class="fa fa-file"></i> <span data-i18n="ownCloudFileUpload.label.remotepath"></span></label>
+        <input type="text" id="node-input-remotepath">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientId"><i class="fa fa-user"></i> <span data-i18n="ownCloudFileUpload.label.clientid"></span></label>
+        <input type="password" id="node-input-clientId">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientSecret"><i class="fa fa-key"></i> <span data-i18n="ownCloudFileUpload.label.secret"></span></label>
+        <input type="password" id="node-input-clientSecret">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="agile-ownCloud-upload" data-lang="en-US">
+
+    <p>A node to upload files to the Owncloud webdav API.</p>
+    <h1>Instructions</h1>
+    <h2>Configuration</h2>
+    <ul>
+        <li>1. Edit the node and add a client ID, secret and server url.</li>
+        <li>2. Optionally fill in the remote path with the location and filename of the uploaded file on the server.</li>
+    </ul>
+    <h2>Upload a file</h2>
+    <p>Connect a node with the following output</p>
+    <p>msg.payload: The text content of the file upload</p>
+    <p>msg.localpath: The local file path of the file to upload</p>
+    <p>msg.remotepath: The remote file path of the file to upload</p>
+    <p>The config.remotepath has a higher priority as the msg.remotepath</p>
+    <p>Either the payload or the localpath are required. The payload has a higher priority as the localpath</p>
+</script>

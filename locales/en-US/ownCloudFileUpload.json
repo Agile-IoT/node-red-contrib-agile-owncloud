@@ -1,0 +1,40 @@
+{
+    "ownCloudFileUpload": {
+        "label": {
+            "ownCloud": "OwnCloud",
+            "welcome": "Agile ownCloud file upload node",
+            "folder": "Remote Path",
+            "name": "Name",
+            "clientid": "Client Id",
+            "secret": "Secret",
+            "owncloudServer": "Server Url",
+            "remotepath": "Remote Path"
+        },
+        "status": {
+            "querying": "Querying",
+            "creating": "Creating",
+            "failed": "Failed",
+            "file-not-found":"File not found",
+            "waiting-for-file": "Waiting for file",
+            "error-uploading-message": "Error occurred during upload: __message__",
+            "error-uploading": "Error occurred during upload",
+            "folderCreated": "Folder successful created"
+        },
+        "warn": {
+            "no-credentials": "Missing ownCloud credentials",
+            "no-file-content": "File Content missing",
+            "no-file-content-long": "File Content missing, please add msg.localpath or msg.payload",
+            "no-serverpath": "Server Path missing",
+            "no-file-remotepath": "Remote Path missing",
+            "no-file-remotepath-long": "Remote path missing. Add it to the config or include msg.remotepath to the input."
+        },
+        "error": {
+            "error": "Error: __error__",
+            "fetch-failed": "Failed to fetch drive: __message__",
+            "fetch-unauthorized": "Unauthorized to fetch owncloud",
+            "error-details": "Error __code__: __message__",
+            "failed-read-file": "Failed to read file",
+            "ownCloud-drive-error": "OwnCloud error"
+        }
+    }
+}
