@@ -29,7 +29,7 @@ module.exports = function (RED) {
         node.send({status:"started", data:config});
         if ((typeof node.clientId === "undefined" || node.clientId === '')|| (typeof node.clientSecret === "undefined" || node.clientSecret === ''))  {
             node.status({fill: "red", shape: "dot", text: "ownCloudFileUpload.warn.no-credentials"});
-            node.send({status:"error", data:RED._('ownCloudFileUpload.status.warn.no-credentials')});
+            node.send({status:"error", data:RED._('ownCloudFileUpload.warn.no-credentials')});
             return;
         } else if(typeof node.owncloudServer === "undefined" || node.owncloudServer === "") {
             node.status({fill: "red", shape: "dot", text: "ownCloudFileUpload.warn.no-serverpath"});
@@ -37,7 +37,7 @@ module.exports = function (RED) {
             return;
         }else{
             node.status({fill: "blue", shape: "dot", text: "ownCloudFileUpload.status.waiting-for-file"});
-            node.send({status:"error", data:RED._('ownCloudFileUpload.status.waiting-for-file')});
+            node.send({status:"ready", data:RED._('ownCloudFileUpload.status.waiting-for-file')});
 
         }
         node.status({
@@ -96,7 +96,7 @@ module.exports = function (RED) {
                                 shape: "dot",
                                 text: "ownCloudFileUpload.status.waiting-for-file"
                             });
-                            node.send({status:RED._('ownCloudFileUpload.status.waiting-for-file'), data:""});
+                            node.send({status:"ready", data:RED._('ownCloudFileUpload.status.waiting-for-file')});
 
                         });
                     });
@@ -117,7 +117,7 @@ module.exports = function (RED) {
                             shape: "dot",
                             text: "ownCloudFileUpload.status.waiting-for-file"
                         });
-                        node.send({status:RED._('ownCloudFileUpload.status.waiting-for-file'), data:""});
+                        node.send({status:"ready", data:RED._('ownCloudFileUpload.status.waiting-for-file')});
 
                     });
                 }
@@ -128,7 +128,7 @@ module.exports = function (RED) {
             }
         });
         node.status({fill: "blue", shape: "dot", text: "ownCloudFileUpload.status.waiting-for-file"});
-        node.send({status:RED._('ownCloudFileUpload.status.waiting-for-file'), data:""});
+        node.send({status:"ready", data:RED._('ownCloudFileUpload.status.waiting-for-file')});
 
         function uploadToOwnCloud(uploadConfig, node, cb) {
             // console.log('uploadToOwnCloud');
