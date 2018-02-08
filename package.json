@@ -1,0 +1,36 @@
+{
+  "name": "node-red-contrib-agile-owncloud",
+  "version": "1.0.1",
+  "description": "Orange ownCloud node-red node",
+  "main": "ownCloudFileUpload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "agile",
+    "iot",
+    "node-red",
+    "nodes",
+    "cloud",
+    "owncloud"
+  ],
+  "author": "Brett Daman <brett@rombit.be>",
+  "license": "EPL-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agile-IoT/node-red-contrib-agile-owncloud"
+  },
+  "node-red": {
+    "nodes": {
+      "agile-cloud-ownCloud-upload": "ownCloudFileUpload.js"
+    }
+  },
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "debug": "^2.6.8",
+    "fs": "0.0.1-security",
+    "request": "^2.81.0",
+    "xml2js": "^0.4.17"
+
+  }
+}
